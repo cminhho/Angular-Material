@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" ng-app="presentationApp" ng-controller="MainCtrl">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTML5</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Latest compiled and minified CSS -->
+		
+		<link rel="stylesheet" href="css/reveal.min.css">
+		
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+		<link rel="stylesheet" href="./vendor/angular-material/angular-material.css"/>
+		
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		.reveal table {
+			margin: auto;
+			border-collapse: collapse;
+			border-spacing: 0;
+			font-size: 30px
+		}
+		.reveal table th, .reveal table td {
+			text-align: left;
+			padding: 0.2em;
+			border-bottom: 1px solid;
+		}
+		.reveal pre {
+			width: 100%;
+		}
+		img{
+			max-width: 700px !important;
+		}
+		textarea, input, button{
+			border-radius: 0 !important;
+		}
+		.btn.btn-default {
+			font-size: 18px;
+			margin: 5px;
+		}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide  data-transition="slide" data-background="#8c4738" data-background-transition="slide"-->
+			<div class="slides">
+			
+				<!-- Home -->
+				<section>
+					<section data-background="img/Red-Material-Design-HD-Wallpaper.jpg" data-background-repeat="repeat" data-background-size="100%">
+						<h1>Angular Material</h1>
+						<img src="img/angular-logo.svg" alt="" width="350" style="border: none; background: none; box-shadow: none; margin: 0; margin-top: 0px;"/>
+						<h2>Understanding The Angular Material Design</h2>
+						<!-- <h2>Material Design in practice with AngularJS</h2> -->
+						<p>
+							<small>Created by <a href="#">hmchung</a> / <a href="#">@tma.com.vn</a></small>
+						</p>
+					</section>
+					<section id="themes" data-background="img/Red-Material-Design-HD-Wallpaper.jpg" data-background-repeat="repeat" data-background-size="100%">
+							<h2>Themes</h2>
+							<p>
+								<a href="?#/themes">Default</a> -
+								<a href="?theme=sky#/themes">Sky</a> -
+								<a href="?theme=beige#/themes">Beige</a> -
+								<a href="?theme=simple#/themes">Simple</a> -
+								<a href="?theme=serif#/themes">Serif</a> -
+								<a href="?theme=night#/themes">Night</a> <br>
+								<a href="?theme=moon#/themes">Moon</a> -
+								<a href="?theme=solarized#/themes">Solarized</a>
+							</p>
+							<p>
+								<!--<small>
+									* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+								</small>-->
+							</p>
+					</section>
+					<section id="themes" data-background="img/Red-Material-Design-HD-Wallpaper.jpg" data-background-repeat="repeat" data-background-size="100%">
+							<h2>Transition Styles</h2>
+							<p>
+								<a href="?transition=cube#/transitions">Cube</a> -
+								<a href="?transition=page#/transitions">Page</a> -
+								<a href="?transition=concave#/transitions">Concave</a> -
+								<a href="?transition=zoom#/transitions">Zoom</a> -
+								<a href="?transition=linear#/transitions">Linear</a> -
+								<a href="?transition=fade#/transitions">Fade</a> -
+								<a href="?transition=none#/transitions">None</a> -
+								<a href="?#/transitions">Default</a>
+							</p>
+					</section>
+				</section>
+				
+				<!-- Rough Timeline of Web Technologies -->
+				<section data-background="img/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png" data-background-repeat="repeat" data-background-size="100%">
+					<h2>Rough Timeline of Web Technologies</h2>
+					<div class="row">
+						http://www.youtube.com/watch?v=Q8TXgCzxEnw
+					</div>
+				</section>
+				
+				<!-- Angular Material Directive -->
+				<section data-background="img/google-material-design-wallpaper-20.jpg" data-background-repeat="repeat" data-background-size="100%" data-color="#000000">
+					<h2>Angular Material Directive</h2>
+					<ul style="float:left">
+							<li>md-button</li>
+							<li>md-card</li>
+							<li>md-checkbox</li>
+							<li>md-content</li>
+							<li>md-divider</li>
+							<li>md-item</li>
+							<li>md-list</li>
+							<li>md-progress-circular</li>
+							<li>md-progress-liner</li>
+							<li>md-radio-button</li>
+							<li>md-radio-group</li>
+					</ul>
+					<ul style="float:right" start="10">
+							<li>md-slidenav</li>
+							<li>md-slider</li>
+							<li>md-subheader</li>
+							<li>md-swipe-left</li>
+							<li>md-swip-right</li>
+							<li>md-swith</li>
+							<li>md-tab</li>
+							<li>md-tabs</li>
+							<li>md-text-float</li>
+							<li>md-toolbar</li>
+							<li>md-tooltip</li>
+					</ul>
+				</section>
+				
+				<!-- Angular Material - Container Elements -->
+				<section data-background="#73255B" data-color="#000000">
+					<h2>Angular Material - Container Elements</h2>
+					<p>responsive CSS layout is built on flexbox has layout element attribute directive, not CSS</p>
+					<div class="row">
+											<pre><code data-trim contenteditable>
+<div layout="row">
+  <div>I'm left.</div>
+  <div>I'm right.</div>
+</div>
+<div layout="column">
+  <div>I'm above.</div>
+  <div>I'm below.</div>
+</div>
+
+					</code></pre>
+					<hr />
+<div layout="row">
+  <div>I'm left.</div>
+  <div>I'm right.</div>
+</div>
+<div layout="column">
+  <div>I'm above.</div>
+  <div>I'm below.</div>
+</div>
+					
+					</div>
+				</section>
+				
+				<!-- Angular Material - Child Alignment -->
+				<section data-background="#73255B" data-color="#000000">
+					<h2>Angular Material - Child Alignment</h2>
+					<p>layout-align attribute takes two words:</p>
+					<div class="row">
+					</div>
+				</section>
+				
+				<!-- Angular Material - Grid System -->
+				<section data-background="#73255B" data-color="#000000">
+					<h2>Angular Material - Grid System</h2>
+					<div class="row">
+					</div>
+				</section>
+				
+				<!-- Angular Material - Responsive Layout -->
+				<section data-background="#73255B" data-color="#000000">
+					<h2>Angular Material - Responsive Layout</h2>
+					<div class="row">
+					</div>
+				</section>
+				
+				<!-- Angular Material - services -->
+				<section data-background="#73255B" data-color="#000000">
+					<h2>Angular Material - services</h2>
+					<div class="row">
+					</div>
+				</section>
+				
+				<!-- Example -->
+				<section>
+					<h2>Sample apps</h2>
+					<ul style="float:left">
+						<li><a href="https://material.angularjs.org">www.material.angularjs.org</a></li>
+						<li><a href="https://github.com/angular/material">github/angular/material</a></li>
+						<li><a href="http://www.html5rocks.com/">www.html5rocks.com</a></li>
+					</ul>
+					<ul style="float:right" start="10">
+						<li><a href="http://google.com/design/spec/material-design">google/material-design</a></li>
+						<li><a href="https://github.com/angular/bower-material">github/angular/bower-material</a></li>
+						<li><a href="http://html5doctor.com/">html5doctor.com</a></li>
+					</ul>
+				</section>
+				
+				<!-- Resource -->
+				<section>
+					<h2>Resources</h2>
+					<ul style="float:left">
+						<li><a href="https://material.angularjs.org">www.material.angularjs.org</a></li>
+						<li><a href="https://github.com/angular/material">github/angular/material</a></li>
+						<li><a href="http://www.html5rocks.com/">www.html5rocks.com</a></li>
+					</ul>
+					<ul style="float:right" start="10">
+						<li><a href="http://google.com/design/spec/material-design">google/material-design</a></li>
+						<li><a href="https://github.com/angular/bower-material">github/angular/bower-material</a></li>
+						<li><a href="http://html5doctor.com/">html5doctor.com</a></li>
+					</ul>
+				</section>
+				 
+				<section>
+					<h1>THE END</h1>
+					<h3>BY HMCHUNG / TMA</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		
+		<script src="./vendor/angular/angular.js"></script>
+		<script src="./vendor/angular-animate/angular-animate.js"></script>
+		<script src="./vendor/angular-aria/angular-aria.js"></script>
+		<script src="./vendor/angular-material/angular-material.js"></script>
+		<script type="text/javascript">
+          angular
+              .module('presentationApp', ['ngMaterial'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      //$mdThemingProvider.theme('default')
+                        //.primaryPalette('pink')
+                        //.accentPalette('orange');
+
+              }).controller('MainCtrl', function($scope){});
+
+		</script>
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
