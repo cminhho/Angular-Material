@@ -16,7 +16,7 @@
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $q) {
     var self = this;
-
+    self.browserTitle = 'chung';
     self.selected     = null;
     self.users        = [ ];
     self.selectUser   = selectUser;

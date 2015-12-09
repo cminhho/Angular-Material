@@ -10,84 +10,146 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+      <link rel="stylesheet" href="./bower_components/angular-material-icons/angular-material-icons.css"/>
+	<!-- style sheet -->
+	<link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+
     <link rel="stylesheet" href="assets/app.css"/>
   </head>
 
-  <body ng-app="starterApp" layout="row" ng-controller="UserController as ul">
+  <body ng-cloak ng-app="starterApp" layout="row" ng-controller="UserController as ul">
 
-  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-                md-component-id="left"
-                md-is-locked-open="$mdMedia('gt-sm')">
+  <!--<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2 md-primary"-->
+                <!--md-component-id="left"-->
+                <!--md-is-locked-open="$mdMedia('gt-sm')">-->
 
-    <md-toolbar class="md-whiteframe-z1">
-      <h1>Users</h1>
-    </md-toolbar>
+    <!--<md-toolbar class="md-whiteframe-z1">-->
+      <!--<h1>Examples</h1>-->
+    <!--</md-toolbar>-->
 
-    <md-list>
-      <md-list-item ng-repeat="it in ul.users">
-          <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-            {{it.name}}
-          </md-button>
-      </md-list-item>
-    </md-list>
+    <!--<md-list>-->
+      <!--<md-list-item ng-repeat="it in ul.users">-->
+          <!--<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }" ui-sref="it.content">-->
+            <!--&lt;!&ndash;<md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>&ndash;&gt;-->
+            <!--{{it.name}}-->
+          <!--</md-button>-->
+      <!--</md-list-item>-->
+    <!--</md-list>-->
 
-  </md-sidenav>
+  <!--</md-sidenav>-->
 
 
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+      <ams-banner ams-header-logo="./assets/header-logo.png" ams-header-alt=""
+                  ams-header-title="Example Center">
+          <div name="panel-left"
+               class="ams-banner-left-menu-hide">
+              <!-- User Menu -->
+              <md-menu>
+                  <md-button style="  min-width: 38px;">
+                      Users
+                  </md-button>
+                  <md-menu-content width="2">
+                  </md-menu-content>
+              </md-menu>
+              <md-menu>
+                  <md-button style="  min-width: 38px;">
+                      Tasks
+                  </md-button>
+                  <md-menu-content width="2">
+                  </md-menu-content>
+              </md-menu>
+              <md-menu>
+                  <md-button style="  min-width: 38px;">
+                      Resources
+                  </md-button>
+                  <md-menu-content width="2">
+                  </md-menu-content>
+              </md-menu>
+              <md-menu>
+                  <md-button style="  min-width: 38px;">
+                      History
+                  </md-button>
+                  <md-menu-content width="2">
+                  </md-menu-content>
+              </md-menu>
+          </div>
 
-    <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h1>Angular Material - Starter App</h1>
-    </md-toolbar>
+          <div name="panel-right">
+              <md-menu>
+                  <ng-md-icon icon="search" style="fill: #777"></ng-md-icon>
+              </md-menu>
+              <md-menu>
+                  <md-button ng-click="$mdOpenMenu()"
+                             class="md-icon-button"
+                             aria-label="Open sample menu">
+                      Help
+                  </md-button>
+                  <md-menu-content width="2">
+                      <md-menu-item>
+                          <md-button >
+                              Do Something
+                          </md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button >
+                              Do Something
+                          </md-button>
+                      </md-menu-item>
+                  </md-menu-content>
+              </md-menu>
 
-    <md-content flex id="content">
-        <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-        <h2>{{ul.selected.name}}</h2>
-        <p>{{ul.selected.content}}</p>
+              <md-menu>
+                  <md-button ng-click="logout()">
+                      Logout
+                  </md-button>
+                  <md-menu-content width="2">
+                  </md-menu-content>
+              </md-menu>
+          </div>
+      </ams-banner>
 
-        <md-button class="contact" md-no-ink ng-click="ul.showContactOptions($event)" aria-label="Contact User">
-          <md-tooltip>Contact {{ ul.selected.name }}</md-tooltip>
-          <md-icon md-svg-icon="share"></md-icon>
-        </md-button>
-      </md-content>
+
+
+      <!--<md-toolbar layout="row" class="md-whiteframe-z1" >-->
+      <!--<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">-->
+        <!--<md-icon md-svg-icon="menu" ></md-icon>-->
+      <!--</md-button>-->
+      <!--<h1 ui-view="hint">Angular Material - Starter App</h1>-->
+
+    <!--</md-toolbar>-->
+
+	<md-content layout="column" flex >
+		 <div ui-view></div>
+    </md-content>
+
 
   </div>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+	<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+  <!--<script src="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc7/angular-material.js"></script>-->
+    <script src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="./bower_components/ng-multi-transclude/src/multi-transclude.js"></script>
 
-    <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
-    <script src="./src/users/UserService.js"></script>
+  <!--directives-->
+  <script src="./src/common/directives/ams-header/ams-header.directive.js"></script>
+  <script src="./src/common/directives/ams-banner/ams-banner.js"></script>
+	<!-- module -->
+    
+	<script src="./src/users/users.module.js"></script>
+    <script src="./src/users/user.controller.js"></script>
+    <script src="./src/users/user.service.js"></script>
 
-    <script type="text/javascript">
+  <script src="./src/md-data-table/md-data-table.js"></script>
 
-          angular
-              .module('starterApp', ['ngMaterial', 'users'])
-              .config(function($mdThemingProvider, $mdIconProvider){
-
-                  $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
-                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-                      .icon("share"      , "./assets/svg/share.svg"       , 24)
-                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
-
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('brown')
-                          .accentPalette('red');
-
-              });
-
-    </script>
+  <script src="./src/app.route.js"></script>
+  <script src="./src/app.module.js"></script>
 
   </body>
 </html>

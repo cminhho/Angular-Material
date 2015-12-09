@@ -1,0 +1,76 @@
+<div class="ams-header" layout="column" ng-multi-transclude-controller>
+    <div layout="row"
+         class="top-header"
+         layout-align="space-between center">
+        <div class="left-inner" layout="row" layout-align="start center">
+            <div class="icon">
+
+                <img src="./assets/task-big-icon-orange.png" alt="Task" title="Task"/>
+                <!--<md-button class="md-fab md-hue-1" aria-label="Icon" style="">-->
+                    <!--<ng-md-icon icon="storage" style="fill: #555"></ng-md-icon>-->
+                <!--</md-button>-->
+            </div>
+            <div class="title-info" layout="column" layout-align="center start">
+                <div>
+                    <small class="md-caption breadcrumb">
+                        Home > Tasks
+                    </small>
+                </div>
+                <div class="title">
+                    <h3 class="md-title">
+                        Browse Tasks
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="right-inner">
+            <section ng-multi-transclude="action-left-side">
+            </section>
+        </div>
+
+    </div>
+
+    <md-content class="tab-content">
+        <div ng-multi-transclude="tab-content"></div>
+    </md-content>
+
+</div>
+
+<style>
+    .ams-header {
+        min-height: 72px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+    }
+    .ams-header .top-header {
+        padding: 10px 20px;
+    }
+    .ams-header .left-inner .title-info {
+        margin-left: 15px;
+    }
+    .ams-header .left-inner h3.md-title {
+        margin: 5px 0;
+    }
+    .ams-header .left-inner .breadcrumb {
+        font-size: 13px;
+    }
+    .ams-header .left-inner .md-button.md-icon-button {
+        margin: 0 0 !important;
+    }
+    .ams-header .right-inner .main-action {
+        border-right: 2px solid #ddd;
+        padding-right: 10px;
+    }
+    .ams-header .right-inner .main-action-button {
+        min-width: 88px;
+        padding: 0 15px 0 10px;
+    }
+    .ams-header .right-inner .md-button.md-icon-button {
+        margin: 0 0 !important;
+    }
+    .ams-header md-content.tab-content md-tabs-wrapper,
+    .ams-header md-tab-content {
+        padding-left: 24px;
+        background-color: #fff;
+    }
+</style>

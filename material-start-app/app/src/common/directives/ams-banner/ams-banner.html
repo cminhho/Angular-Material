@@ -1,0 +1,45 @@
+<style>
+    .md-toolbar-tools {
+        width: 100%;
+        height: 54px;
+        max-height: 54px;
+        padding: 0 16px;
+        margin: 0;
+    }
+    md-toolbar {
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
+        min-height: 54px;
+        width: 100%;
+    }
+    .ams-banner-desktop md-button {
+        min-width: 58px;
+    }
+</style>
+<md-toolbar class="ams-webapp-main-background ams-banner-desktop">
+    <div class="md-toolbar-tools" ng-multi-transclude-controller>
+        <md-menu md-offset="0 55">
+            <md-button style="min-width: 10px;line-height: 0px" ng-click="openMenu($mdOpenMenu, $event)">
+                <img data-ng-src="{{header.logo}}" alt="{{header.alt}}" title="{{header.alt}}">
+            </md-button>
+            <md-menu-content width="2">
+                <md-menu-item>
+                    <md-button ng-click="alertUser('webapps')">
+                        WebApps
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="alertUser('hellocenter')">
+                        HelloCenter
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <a class="ams-banner-header-title" ui-sref="home" style="color: #fff">5520 AMS - <span ng-bind="header.title"></span></a>
+        <span flex="5"></span>
+        <div ng-multi-transclude="panel-left"></div>
+        <span flex=""></span>
+        <div ng-multi-transclude="panel-right"></div>
+    </div>
+</md-toolbar>
