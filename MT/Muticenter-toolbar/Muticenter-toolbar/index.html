@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html ng-app="toolBar">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Toolbar</title>
+	<!-- CSS -->
+	<link href="css/vendor/angular-material.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet"/>
+	<!-- script -->
+	<script src="js/vendor/angular.js"></script>        
+	<script src="js/vendor/angular-material.min.js"></script>        
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controller.js"></script>
+</head>
+<body>
+	<div ng-controller="toolCtrl as tlc" ng-cloak>		
+	<md-sidenav hide-gt-sm class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+		      <md-toolbar show-sm class="md-theme-indigo" >
+		      	<a href="#" class="logo">
+					<img src="img/ALU-logo.png">
+				</a>
+		        <h1 class="md-toolbar-tools">5575 PCC</h1>
+		      </md-toolbar>
+		      <md-content >
+		       <md-menu-item>
+		          <md-button>
+		            ONT
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button>
+		            SERVICES
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button>
+		            OLT
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-divider></md-menu-divider>
+		        
+		        <md-menu-item>
+		          <md-button>
+		          	<md-icon><i class="material-icons">account_circle</i></md-icon>
+		          	<span>Profile</span>
+		          </md-button>
+		        </md-menu-item>
+		       <md-menu-item>
+		          <md-button>
+		          	<md-icon><i class="material-icons">settings</i></md-icon>
+		          	<span>Settings</span>
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button>
+		          	<md-icon><i class="material-icons">help</i></md-icon>
+		          	<span>Help</span>
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-divider></md-menu-divider>
+		        <md-menu-item>
+		          <md-button>
+		          	<md-icon><i class="material-icons">apps</i></md-icon>
+		          	<span>App Drawer</span>
+		          </md-button>
+		        </md-menu-item>
+
+		      </md-content>
+		    </md-sidenav>
+
+			<md-toolbar class="main-toolbar" ng-class="toggleBg">
+			<div class="md-toolbar-tools">
+			<div class="brand-title" ng-class="toggleBrand">
+				<a href="#" class="logo" hide-sm hide-xs>
+					<img src="img/ALU-logo.png">
+				</a>
+				<md-button hide-gt-sm ng-click="toggleLeft()"
+	            class="md-icon-button toggle-mobile-menu" hide-gt-md>
+	            <md-icon>
+	            <i class="material-icons">menu</i></md-icon>
+	          </md-button>
+
+				<h2>
+					<span>5571 PCC</span>
+				</h2>
+			</div>
+			<div class="search-back" ng-class="toggleBack">
+				<md-button hide-gt-sm ng-click="searchBar()"
+	            class="md-icon-button toggle-mobile-menu" hide-gt-md>
+	            <md-icon><i class="material-icons">arrow_back</i></md-icon>
+	          </md-button>
+			</div>
+			<div class="wrap-left-menu" hide-sm hide-xs>
+				<ul>
+					<li>
+						<a href="#">ONT</a>
+					</li>
+					<li>
+						
+				    <md-menu width="2">
+                  <md-button ng-click="$mdOpenMenu()" class="menu-services">
+                  <span>
+                  	SERVICES
+                  </span>
+                  <md-icon><i class="material-icons">arrow_drop_down</i></md-icon>
+                  </md-button>
+                  <md-menu-content width="4" >
+                  <!--i class="material-icons">arrow_drop_up</i-->
+                    <md-menu-item><md-button>Submenu1</md-button></md-menu-item>
+                    <md-menu-item><md-button>Submenu2</md-button></md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+					</li>
+					<li>
+						<a href="#">OLT</a>
+					</li>
+				</ul>
+			</div>
+			<span class="flex-spacer" ng-class="class"  flex></span>
+			<div class="search-box" ng-class="toggleSearch">
+				<input type="text" placeholder="Search" />
+				<md-button ng-click="searchBar()" class="md-icon-button"><md-icon> <i class="material-icons">search</i></md-icon></md-button>
+			</div>
+			<div class="wrap-right-menu" hide-sm hide-xs>
+				<div class="wrap-notification">
+					
+
+					<md-menu md-position-mode="target-right target">
+				      <md-button aria-label="" class="md-icon-button" ng-click="tlc.openMenu($mdOpenMenu, $event)">
+				      <md-icon><i class="material-icons">notifications</i></md-icon>
+				        <span class="badge">4</span>
+				      </md-button>
+				      <md-menu-content width="4">
+				      	<i class="material-icons">arrow_drop_up</i>
+				        <md-menu-item>
+				          <md-button>
+				            Redial
+				          </md-button>
+				        </md-menu-item>
+				        <md-menu-item>
+				          <md-button>
+				            Check voicemail
+				          </md-button>
+				        </md-menu-item>
+				        <md-menu-divider></md-menu-divider>
+				        <md-menu-item>
+				          <md-button>
+				           notifications
+				          </md-button>
+				        </md-menu-item>
+				      </md-menu-content>
+				    </md-menu>
+				</div>
+				
+			<md-button class="md-icon-button" aria-label="More">
+			<i class="material-icons">settings</i>
+		</md-button>
+		<div class="wrap-profile">
+			<md-menu md-position-mode="target-right target">
+		      <a aria-label="" class="" ng-click="tlc.openMenu($mdOpenMenu, $event)">
+		      <span>Admin</span>
+		        <md-icon><i class="material-icons">account_circle</i></md-icon>
+		       
+		      </a>
+		      <md-menu-content width="4">
+		      <i class="material-icons">arrow_drop_up</i>
+		        <md-menu-item>
+		          <md-button>
+		            Redial
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button>
+		            Check voicemail
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-divider></md-menu-divider>
+		        <md-menu-item>
+		          <md-button>
+		           notifications
+		          </md-button>
+		        </md-menu-item>
+		      </md-menu-content>
+		    </md-menu>
+		</div>
+		<md-button class="md-icon-button" aria-label="More">
+			<md-icon><i class="material-icons">help_outline</i></md-icon>
+		</md-button>
+				
+			</div>
+	
+	<md-menu hide-sm hide-xs md-position-mode="target-right target" class="wrap-menu">
+      <md-button aria-label="" class="md-icon-button" ng-click="tlc.openMenu($mdOpenMenu, $event)">
+       <md-icon><i class="material-icons">apps</i></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+      <i class="material-icons">arrow_drop_up</i>	
+		
+		<md-menu-item>
+		    <md-button>
+		        5575 Universal TWDM controller
+		    </md-button>
+		</md-menu-item>
+		    <md-menu-item>
+				<md-button>
+		            5520 Task Center
+		        </md-button>
+		    </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+	
+	</div>
+	</md-toolbar>
+	</div>
+
+
+</body>
+</html>

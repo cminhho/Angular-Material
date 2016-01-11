@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Material - Example Center</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="src/styles/app.css"/>
+</head>
+
+<body ng-cloak ng-app="starterApp" layout="row">
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2" >
+    <ams-banner ams-header-logo="./assets/header-logo.png" ams-header-alt="" md-theme="hello-center"
+                ams-header-title="Example Center">
+        <div name="panel-left"
+             class="ams-banner-left-menu-hide">
+
+            <!-- User Menu -->
+            <style>
+                ams-banner md-menu {
+                    padding: 0;
+                    margin: 0;
+                }
+            </style>
+            <md-menu class="md-icon-button" >
+                <md-button aria-label="Users" aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">
+                    Example <ng-md-icon icon="arrow_drop_down"></ng-md-icon>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex ui-sref="mdDialog">mdDialog</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex ui-sref="mdTable">mdTable</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex ui-sref="mdAutocomplete">mdAutocomplete</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex ui-sref="alarmSeverityIcons">alarmSeverityIcons</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu class="md-icon-button">
+                <md-button aria-label="Users" aria-label="Open demo menu"
+                           ng-click="$mdOpenMenu($event)">
+                    Tasks
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex>Option {{item}}</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu class="md-icon-button">
+                <md-button aria-label="Users" aria-label="Open demo menu" class=""
+                           ng-click="$mdOpenMenu($event)">
+                    Resource
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex>Option {{item}}</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu class="md-icon-button">
+                <md-button aria-label="Users" aria-label="Open demo menu" class=""
+                           ng-click="$mdOpenMenu($event)">
+                    History
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex>Option {{item}}</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+        </div>
+        <div name="panel-right" layout="row" layout-align="center center">
+            <div style="  position: relative;">
+                <input ng-model="search" placeholder="Search" class="search-global"/>
+                <ng-md-icon icon="search" class="search-icon"></ng-md-icon>
+            </div>
+        </div>
+    </ams-banner>
+    <md-content layout="column" flex>
+        <div ui-view></div>
+    </md-content>
+</div>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-aria/angular-aria.js"></script>
+<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="./bower_components/angular-material/angular-material.js"></script>
+<script src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="./bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="./bower_components/ng-multi-transclude/src/multi-transclude.js"></script>
+
+<!--directives-->
+<script src="./src/common/directives/directives.module.js"></script>
+<script src="./src/common/directives/ams-header/ams-header.directive.js"></script>
+<script src="./src/common/directives/ams-banner/ams-banner.directive.js"></script>
+
+<!--layouts-->
+<script src="./src/layout/layout.module.js"></script>
+<script src="./src/layout/left-sidebar/left-sidebar.module.js"></script>
+<script src="./src/layout/left-sidebar/left-sidebar.service.js"></script>
+<script src="./src/layout/left-sidebar/left-sidebar.controller.js"></script>
+
+<!-- module -->
+<script src="./src/modules/app.module.js"></script>
+<script src="./src/modules/browse-tasks/browse-tasks.js"></script>
+<!--md-dialog-->
+<script src="src/modules/md-dialog/md-dialog.js"></script>
+<!--autocomplete-->
+<script src="src/modules/md-autocomplete/md-autocomplete.js"></script>
+
+<!--alarm-severity-icons-->
+<script src="src/modules/alarm-severity-icons/alarm-severity-icons.module.js"></script>
+
+<script src="./src/app.route.js"></script>
+<script src="./src/app.theme.js"></script>
+<script src="./src/app.js"></script>
+</body>
+</html>

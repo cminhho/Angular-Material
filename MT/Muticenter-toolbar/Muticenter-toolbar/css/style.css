@@ -1,0 +1,239 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
+
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; }
+.menudemoBasicUsage .menu-demo-container {
+  min-height: 200px; }
+
+  .md-open-menu-container.md-active{
+  	top: 64px !important;
+  }
+.main-toolbar{
+	transition:all 0.5s ease;
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	-ms-transition:all 0.5s ease;
+}
+.main-toolbar.toggle-bg{
+	background-color: #f6f6f6;
+	border-bottom:1px solid #eee; 
+}
+.md-toolbar-tools h2{
+	min-width: 95px;
+}
+.brand-title, .search-back{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.logo{
+	margin:0 15px 0 8px;
+}
+.search-back md-icon i{
+	color: #000;
+}
+.search-back{
+	display: none;
+}
+.wrap-left-menu{
+	padding-left: 40px;
+}
+  .wrap-left-menu ul{
+  	list-style: none;
+  	padding: 0;
+  	margin: 0;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+.wrap-left-menu ul a{
+	display: block;
+	padding: 10px 20px;
+	font-size: 15px;
+}
+.menu-services{
+	cursor: pointer;
+    display: flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:row;
+	position: relative;
+}
+.menu-services md-icon{
+	position: absolute;
+	top: 2px;
+	right: -8px;
+}
+.menu-services i{
+	padding: 0;
+	font-size: 16px;
+}
+.wrap-right-menu{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	color: #FFF;
+}
+.wrap-right-menu i{
+	color:#FFF;
+}
+
+.md-toolbar-tools>md-menu:last-child>.md-button{
+	margin: 12px 5px 12px 0;
+}
+.md-toolbar-tools>md-menu:last-child>.md-button md-icon svg{
+	fill:#FFF;
+}
+.search-box{
+	position: relative;
+	transition:all .5s ease;
+	-webkit-transition:all .5s ease;
+	-moz-transition:all .5s ease;
+	-ms-transition:all .5s ease;
+}
+
+.search-box button{
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+.search-box button i{
+	color: #000;
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+.search-box input{
+	min-height: 36px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: 'Roboto';
+	border: none;
+	transition:all .5s ease;
+	-webkit-transition:all .5s ease;
+	-moz-transition:all .5s ease;
+	-ms-transition:all .5s ease;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+.search-box input:focus, .search-box input:active{
+	border: none;
+}
+.wrap-notification .badge{
+	position: absolute;
+	width:15px;
+	height: 15px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	top: 4px;
+	right: 4px;
+	background-color: #27AAE2;
+	text-align: center;
+	line-height: 16px;
+    font-size: 12px;
+}
+.wrap-profile{
+	margin: 0 6px;
+	cursor: pointer;
+	font-size: 13px;
+}
+.wrap-profile a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.wrap-profile a span{
+	margin-right:10px; 
+}
+
+md-menu-content i{
+	position: absolute;
+    top: -27px;
+    right: 0;
+    font-size: 46px !important;
+    color: #FFF;
+}
+
+/*Sidebar*/
+md-sidenav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+md-sidenav md-toolbar{
+	justify-content:flex-start;
+	align-items:center;
+	flex-direction:row;
+	min-height: 64px;
+}
+md-sidenav md-menu-divider{
+	height: 1px;
+	background: rgba(0,0,0,0.2);
+	width: 100%;
+	display: block;
+}
+md-sidenav md-menu-item>.md-button{
+	display: -webkit-flex;
+  	display: -moz-flex;
+  	display: -ms-flexbox;
+  	display: flexbox;
+	justify-content:flex-start;
+	align-items:center;
+}
+md-sidenav md-menu-item>.md-button md-icon{
+	margin-right: 10px;
+}
+
+@media (max-width: 960px){
+	.md-toolbar-tools .md-button.toggle-mobile-menu{
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.search-box input{
+		background-color: transparent;
+		color: #FFF;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.search-box button i{
+		color: #FFF;
+		position: relative;
+		top: auto;
+		transform:none;
+	}
+	.search-box{
+		width: 100%;
+	}
+	.toggle-width.search-box input{
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+		background-color: #FFF;
+		color: #000;
+	}
+	.toggle-width.search-box md-icon i{
+		color: #000;
+	}
+	.hide-spacer{
+		display: none;
+	}
+	.brand-title.toggle-brand{
+		display: none;
+	}
+	.search-back.toggle-back{
+		display: flex;
+	}
+}

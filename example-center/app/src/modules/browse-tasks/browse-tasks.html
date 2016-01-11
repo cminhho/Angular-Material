@@ -1,0 +1,202 @@
+﻿<style>
+    table[md-data-table] > tbody > tr > td {
+        color: #333 !important;
+        font-size: 16px !important;
+    }
+
+    table[md-data-table] > thead > tr > th {
+        color: #333 !important;
+        font-size: 16px !important;
+    }
+
+    md-data-table-pagination > div {
+        font-size: 14px;
+    }
+
+    a {
+        color: #337ab7;
+        text-decoration: none;
+    }
+
+    md-select {
+        padding: 14px 2px 18px !important;
+    }
+
+    md-data-table-toolbar {;
+        padding: 0 24px;
+        height: 54px;
+    }
+
+    .fabToolbardemoBasicUsage md-fab-toolbar.md-right md-fab-trigger.align-with-text {
+        left: 7px;
+    }
+</style>
+
+<ams-header>
+    <div name="action-left-side">
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <div class="main-action">
+                <md-button class="md-raised md-primary main-action-button"
+                        ng-click="showDialog()">
+                    <ng-md-icon icon="add" style="fill: #fff"></ng-md-icon>
+                    <span>Create New</span>
+                </md-button>
+                <md-button class="md-raised md-primary main-action-button">
+                    <ng-md-icon icon="delete" style="fill: #fff"></ng-md-icon>
+                    <span>Delete {{testTitle}}</span>
+                </md-button>
+            </div>
+            <md-menu class="md-icon-button" md-position-mode="target-right target" style="margin-left: 13px;">
+                <md-button aria-label="More" aria-label="Open demo menu" class="md-icon-button"
+                           ng-click="$mdOpenMenu($event)">
+                    <ng-md-icon icon="more_vert"></ng-md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <ng-md-icon icon="settings"
+                                            size="22"
+                                            style="fill: #f69220"></ng-md-icon>
+                                <p flex>Option {{item}}</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </section>
+    </div>
+
+</ams-header>
+
+
+<div layout="row">
+    <md-sidenav class="site-sidenav md-sidenav-left  md-primary"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+        <md-list>
+            <md-list-item>
+                <!--<md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }"-->
+                           <!--ui-sref="it.content">-->
+                    <!--<ng-md-icon icon="filter_list"></ng-md-icon>-->
+                    <!--{{it.name}}-->
+                <!--</md-button>-->
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+
+    <div flex layout="column" tabIndex="-1" role="main" style="  border-left: 1px solid #ddd;">
+
+
+        <md-content layout="column" flex>
+            <md-data-table-toolbar ng-show="!selected.length" layout="row" layout-align="space-between center">
+
+                <h2 class="md-title">My Recent Tasks</h2>
+
+            </md-data-table-toolbar>
+
+            <md-data-table-toolbar class="alternate" ng-show="selected.length">
+                <div>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</div>
+            </md-data-table-toolbar>
+
+            <md-data-table-container>
+                <table md-data-table md-row-select="selected" md-progress="deferred">
+                    <thead md-order="query.order" md-trigger="onorderchange">
+                    <tr>
+                        <th ng-repeat="column in columns"
+                            ng-attr-order-by="{{column.orderBy}}"
+                            ng-attr-numeric="{{column.numeric}}"
+                            ng-attr-unit="{{column.unit}}"
+                            name="{{column.name}}"
+                            ng-attr-descend-first="{{column.descendFirst}}"
+                            ng-attr-trim="{{column.trim}}"></th>
+                        <!-- <th class="custom" order-by="name" unit="100g serving" name="Dessert"></th>
+                        <th order-by="type" name="Type" descend-first></th>
+                        <th numeric order-by="calories.value" name="Calories"></th>
+                        <th numeric unit="g" order-by="fat.value" name="Fat"></th>
+                        <th numeric unit="g" order-by="carbs.value" name="Carbs"></th>
+                        <th numeric unit="g" order-by="protein.value" name="Protein" trim></th>
+                        <th numeric unit="mg" order-by="sodium.value" name="Sodium"></th>
+                        <th numeric unit="%" order-by="calcium.value" name="Calcium"></th>
+                        <th numeric unit="%" order-by="iron.value" name="Iron" hide-sm></th> -->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr md-auto-select
+                        md-disable-select="task.calories.value > 300"
+                        data-ng-repeat="task in desserts.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td style="min-width: 300px;">
+                            <div layout="row" layout-align="start center">
+                                <div style="padding: 4px 8px">
+                                    <!--<ng-md-icon icon="dashboard" style="fill: #333; height: 35px; width: 35px" size="35px"></ng-md-icon>-->
+                                    <img src="./assets/task-medium-icon.png" alt="Task" title="Task"/>
+                                </div>
+                                <div>
+                                    <div>
+                                        <a href="">{{task.name}}</a>
+                                    </div>
+                                    <div>{{task.name}}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="max-width: 170px;">{{task.lastExecutedDate | date: 'medium'}}</td>
+                        <td style="max-width: 150px;">{{task.executedBy.fullUsername}}</td>
+                        <td style="max-width: 150px;">{{task.totalExecutions}}</td>
+                        <td style="max-width: 150px;" show-unit hide-sm>{{task.lastMonthExecutions | number: 0}}</td>
+
+                        <td layout="row" layout-align="start center">
+                            <div>
+                                <a href
+                                   data-ng-click="editFavoriteTask(task,tableStatus)">
+                                    <ng-md-icon data-ng-show="!task.favourite"
+                                                id="favouriteNotSelected"
+                                                size="28"
+                                                icon="grade"
+                                                style="fill: #268; width: 28px; height: 28px"></ng-md-icon>
+                                    <ng-md-icon data-ng-show="task.favourite"
+                                                size="28"
+                                                id="favouriteSelected"
+                                                icon="grade"
+                                                style="fill: #ffd700; width: 28px; height: 28px"></ng-md-icon>
+                                </a>
+                            </div>
+                            <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+                                <md-menu md-position-mode="target-right target">
+                                    <md-button aria-label="Open demo menu" class="md-icon-button"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <ng-md-icon icon="settings"
+                                                    size="22"
+                                                    style="fill: #f69220"></ng-md-icon>
+                                    </md-button>
+                                    <md-menu-content width="4">
+                                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                            <md-button ng-click="ctrl.announceClick($index)">
+                                                <div layout="row">
+                                                    <ng-md-icon icon="settings"
+                                                                size="22"
+                                                                style="fill: #f69220"></ng-md-icon>
+                                                    <p flex>Option {{item}}</p>
+                                                    <!--<md-icon md-menu-align-target md-svg-icon="call:portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>-->
+                                                </div>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+
+            <md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{desserts.count}}"
+                                      md-trigger="onpagechange"></md-data-table-pagination>
+            <!--<md-data-table-toolbar>-->
+            <!--<md-button ng-click="loadStuff()">Trigger Outside Event</md-button>-->
+            <!--</md-data-table-toolbar>-->
+        </md-content>
+    </div>
+</div>

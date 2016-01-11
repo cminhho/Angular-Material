@@ -1,0 +1,26 @@
+<div>
+    <div layout-padding>
+        <h1>Autocomplete</h1>
+        <div layout="row">
+            <div flex>
+                <md-chips ng-model="dataSelected" md-autocomplete-snap md-require-match="true"
+                          md-on-remove="onRemove($chip)" md-on-add="onAdd($chip)">
+                    <md-autocomplete md-items="item in search(searchText)"
+                                     md-search-text="searchText"
+                                     md-selected-item="dataSelected"
+                                     md-no-cache="true"
+                                     md-min-length="0">
+                        <span md-highlight-text="searchText">{{item}}</span>
+                        <md-not-found>
+                            No matches found.
+                        </md-not-found>
+                    </md-autocomplete>
+                </md-chips>
+            </div>
+        </div>
+        <md-button class="md-primary md-raised" ng-click="showSelected()">
+            <md-icon md-svg-src="./assets/svg/ic_description_white_24px.svg"></md-icon>
+            Submit
+        </md-button>
+    </div>
+</div>

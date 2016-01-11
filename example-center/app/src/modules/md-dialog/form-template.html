@@ -1,0 +1,50 @@
+<md-dialog aria-label="Dialog">
+    <form>
+        <md-toolbar md-theme="hello-center">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="{{data.icon}}"></md-icon>
+                <h2> {{data.title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="close">
+                    <md-icon md-svg-src="assets/svg/ic_close_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content  style="min-width:400px;">
+            <div class="md-dialog-content">
+                <form>
+                    <md-input-container class="md-block">
+                        <label>Username</label>
+                        <input type="text" size="30">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input type="password" size="30">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input type="email" size="30">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <md-radio-group layout="row" ng-model="general">
+                            <md-radio-button value="Male">Male</md-radio-button>
+                            <md-radio-button value="Female">Female</md-radio-button>
+                        </md-radio-group>
+                    </md-input-container>
+
+                    <md-datepicker ng-model="date"></md-datepicker>
+
+                </form>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button class="md-raised md-primary" ng-click="answer(data.okButton)" md-autofocus>
+                {{data.okButton}}
+            </md-button>
+            <md-button class="md-raised" ng-click="answer(data.cancelButton)">
+                {{data.cancelButton}}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,44 @@
+
+
+<style>
+    .alarm-severity-icons {
+        width:30px;
+        height:30px;
+        font-size:14px;
+        color:#FFF;
+        display:inline-block;
+        text-align:center;
+        line-height:30px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    /*.critical {*/
+        /*background-color:#DA2A27;*/
+        /*color:#FFF;*/
+    /*}*/
+    /*.major {*/
+        /*background-color:#F1A83F;*/
+        /*color:#000;*/
+    /*}*/
+    /*.minor {*/
+        /*background-color:#FFEB41;*/
+        /*color:#000;*/
+    /*}*/
+    /*.warning {*/
+        /*background-color:#5EE2D7;*/
+        /*color:#000;*/
+    /*}*/
+    /*.indeterminate {*/
+        /*background-color:#E8E8E8;*/
+        /*color:#000;*/
+    /*}*/
+    /*.no-alarms {*/
+        /*background-color:#A3E1B7;*/
+        /*color:#000;*/
+    /*}*/
+</style>
+<span data-ng-style="myStyle;ownStyle"  class="alarm-severity-icons">
+    <span data-ng-bind="abbreviatedName">Critical</span>
+</span>

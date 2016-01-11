@@ -1,8 +1,8 @@
 {
-  "name": "angular-material-starter",
-  "description": "A starter project for AngularJS Material",
-  "version": "0.0.2",
-  "homepage": "https://github.com/angular/material-start",
+  "name": "angular-material-example-center",
+  "description": "5520 AMS Example Center",
+  "version": "0.0.0",
+  "homepage": "",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -14,6 +14,9 @@
     "angular-ui-router": "~0.2.15",
     "angular-material-icons": "~0.6.0",
     "ng-multi-transclude": "git://github.com/zachsnow/ng-multi-transclude.git"
+  },
+  "resolutions": {
+    "angular-material": "1.0.0-rc7"
   },
   "devDependencies": {
     "angular-material": "1.0.0-rc7"

@@ -1,0 +1,60 @@
+<div>
+    <div layout-padding>
+
+        <div flex layout="column" tabIndex="-1" role="main">
+
+            <md-content layout="column" flex>
+                <md-data-table-toolbar ng-show="!selected.length" layout="row" layout-align="space-between center">
+
+                    <h2 class="md-title">Alarm</h2>
+
+                </md-data-table-toolbar>
+
+
+                <md-data-table-container>
+                    <table md-data-table >
+                        <thead md-order="query.order" md-trigger="onorderchange">
+                        <tr>
+                            <th ng-repeat="column in columns"
+                                ng-attr-order-by="{{column.orderBy}}"
+                                ng-attr-numeric="{{column.numeric}}"
+                                ng-attr-unit="{{column.unit}}"
+                                name="{{column.name}}"
+                                ng-attr-descend-first="{{column.descendFirst}}"
+                                ng-attr-trim="{{column.trim}}"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr md-auto-select
+                            data-ng-repeat="alarm in alarms | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                            <td style="min-width: 100px;">
+                                <div layout="row" layout-align="start center">
+
+                                    <span alarm-severity-icons="alarm.severity"></span>
+
+                                </div>
+                            </td>
+                            <td style="max-width: 350px;">{{alarm.eventTime | date: 'medium'}}</td>
+                            <td style="max-width: 150px;">{{alarm.sourceName}}</td>
+                            <td style="max-width: 150px;">{{alarm.probableCause}}</td>
+                            <td style="max-width: 150px;" show-unit hide-sm>{{alarm.specificProblem}}</td>
+
+                            <td layout="row" layout-align="start center">
+                                <span data-ng-bind="alarm.proposedRepairAction"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-data-table-container>
+
+                <md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{desserts.count}}"
+                                          md-trigger="onpagechange"></md-data-table-pagination>
+                <!--<md-data-table-toolbar>-->
+                <!--<md-button ng-click="loadStuff()">Trigger Outside Event</md-button>-->
+                <!--</md-data-table-toolbar>-->
+            </md-content>
+        </div>
+
+
+    </div>
+</div>

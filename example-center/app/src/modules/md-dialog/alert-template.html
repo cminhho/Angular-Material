@@ -1,0 +1,26 @@
+<md-dialog aria-label="Dialog">
+    <form>
+        <md-toolbar md-theme="hello-center">
+            <div class="md-toolbar-tools">
+                <md-icon md-svg-src="{{data.icon}}"></md-icon>
+                <h2> {{data.title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="close">
+                    <md-icon md-svg-src="assets/svg/ic_close_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h3>
+                    {{data.content}}
+                </h3>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button class="md-raised md-primary" ng-click="answer(data.okButton)" md-autofocus>
+                {{data.okButton}}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
