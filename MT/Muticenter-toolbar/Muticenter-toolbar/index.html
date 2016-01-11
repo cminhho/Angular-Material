@@ -102,15 +102,19 @@
 						<a href="#">ONT</a>
 					</li>
 					<li>
-						
-				    <md-menu width="2">
+					<style type="text/css">
+					md-menu.md-menu.md-open .menu-services {
+  height: 64px;
+  background: rgba(158,158,158,0.2);
+}</style>	
+				    <md-menu>
                   <md-button ng-click="$mdOpenMenu()" class="menu-services">
                   <span>
                   	SERVICES
                   </span>
                   <md-icon><i class="material-icons">arrow_drop_down</i></md-icon>
                   </md-button>
-                  <md-menu-content width="4" >
+                  <md-menu-content width="3" >
                   <!--i class="material-icons">arrow_drop_up</i-->
                     <md-menu-item><md-button>Submenu1</md-button></md-menu-item>
                     <md-menu-item><md-button>Submenu2</md-button></md-menu-item>
