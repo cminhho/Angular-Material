@@ -1,0 +1,47 @@
+#checklist {
+
+    // Single scroll
+    &.single-scroll {
+
+        .checklist-pane {
+            overflow: hidden;
+        }
+    }
+
+    .checklist-tree{
+        .angular-ui-tree-placeholder{
+            background: rgba(0, 0, 0, 0.12);
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 100% !important;
+        }
+
+    }
+
+}
+.angular-ui-tree-nodes{
+    .angular-ui-tree-nodes{
+        padding-left: 35px;
+    }
+}
+
+.angular-ui-tree-drag{
+    opacity: 1;
+    background: #FFFFFF;
+    box-shadow: $whiteframe-shadow-14dp;
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    #checklist {
+
+        .checklist-tree-item {
+
+            .handle {
+                width: 32px;
+            }
+        }
+    }
+}

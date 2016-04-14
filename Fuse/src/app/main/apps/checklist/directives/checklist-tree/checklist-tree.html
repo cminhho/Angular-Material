@@ -1,0 +1,9 @@
+<div class='checklist-tree'>
+    <div ui-tree='options'>
+        <ol ui-tree-nodes="" ng-model="checklist.tasks" class='task'>
+            <li ng-repeat="task in checklist.tasks" ui-tree-node>
+                <div checklist-tree-item></div>
+            </li>
+        </ol>
+    </div>
+</div>

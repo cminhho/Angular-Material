@@ -1,0 +1,26 @@
+<div class="checklist-tree-item" md-ink-ripple layout="row" layout-align="start center">
+
+    <div ui-tree-handle>
+        <div class="handle">
+            <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+        </div>
+    </div>
+
+    <md-checkbox class="checkbox" ng-checked="task.completed"
+                 aria-label="{{task.completed ? 'Not completed' : 'Completed'}}"
+                >
+    </md-checkbox>
+
+    <div layout="row" layout-align="start center" flex>
+
+        <div class="info" flex>
+            <div class="title">
+                {{task.name}}
+            </div>
+
+            <div class="notes">
+                {{task.description || task.name}}
+            </div>
+        </div>
+    </div>
+</div>
